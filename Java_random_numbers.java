@@ -3,19 +3,34 @@
 
 import java.io.*;
 import java.util.Arrays;
-class GFG {
-    public static double[] getRandDistArray(int n, double m, double min)
-    {
-        double randArray[] = new double[n];
-        double sum = 0;
 
-        // Generate n random numbers
+public class GFG {
+
+    public static double[] getRandNumb(int n){
+
+        double [] randArray= new double[n];
         for (int i = 0; i < randArray.length; i++)
         {
             randArray[i] = Math.random();
-            sum += randArray[i];
         }
+        return randArray;
+    }
 
+    public static double getsum(double []randArray,double sum){
+        
+        for (int i = 0; i < randArray.length; i++)
+        {
+           sum+=randArray[i];
+        }
+        return sum;
+    }
+    public static double[] getRandDistArray(int n, double m, double min)
+    {
+        double sum = 0;
+        double[] randArray;
+       // Generate n random numbers
+        randArray= getRandNumb(n);
+        sum=getsum(randArray,sum);
         // check number value
         int cnt = 0;
         while (true)
